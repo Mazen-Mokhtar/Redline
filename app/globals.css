@@ -70,7 +70,7 @@ html {
     @apply flex items-center gap-3 px-4 py-3 text-[var(--color-text-secondary)] 
            hover:bg-[var(--color-surface)] hover:text-[var(--color-text-primary)] 
            transition-all duration-500 rounded-lg relative backdrop-blur-sm
-           before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2
+           before:content-[''] before:absolute before:right-0 before:top-1/2 before:-translate-y-1/2
            before:w-0 before:h-full before:bg-[var(--color-primary)]
            before:transition-all before:duration-500 hover:before:w-1
            hover:shadow-[0_0_30px_rgba(255,0,51,0.1)];
@@ -109,6 +109,25 @@ html {
     @apply p-6 backdrop-blur-sm relative;
     background: linear-gradient(to bottom, rgba(28, 31, 42, 0.8), rgba(28, 31, 42, 0.95));
   }
+
+  /* Mobile Specific Styles */
+  @media (max-width: 640px) {
+    .nav-item {
+      @apply py-4;
+    }
+
+    .product-card {
+      @apply mx-0;
+    }
+
+    .product-info {
+      @apply p-4;
+    }
+
+    .badge-vip {
+      @apply px-3 py-0.5 text-xs;
+    }
+  }
 }
 
 @keyframes golden-pulse {
@@ -138,14 +157,24 @@ html {
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+/* Mobile Responsive Adjustments */
+@media (max-width: 640px) {
   :root {
-    --font-size-4xl: 2rem;
-    --font-size-3xl: 1.75rem;
-    --font-size-2xl: 1.375rem;
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.25rem;
   }
-  
-  .product-card {
-    @apply mx-4;
+
+  .handwritten-text {
+    font-size: 1.5rem;
+  }
+
+  .neon-glow {
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 8px #fff,
+      0 0 15px #fff,
+      0 0 30px var(--color-primary),
+      0 0 60px var(--color-primary);
   }
 }
